@@ -1,0 +1,54 @@
+@import './variables';
+
+
+@mixin _max-text($num: 2) {
+    -webkit-line-clamp: $num;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+}
+
+@mixin maxWidth($maxwidth) {
+    @media (max-width: $maxwidth) {
+        @content;
+    }
+}
+
+@mixin minWidth($minwidth) {
+    @media (min-width: $minwidth) {
+        @content;
+    }
+}
+
+@mixin widthMinMax($minwidth, $maxwidth) {
+    @media (min-width: $minwidth) and (max-width: $maxwidth) {
+        @content;
+    }
+}
+@mixin hiddenScroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+@mixin flexCenter($x: 1, $y: 1) {
+    display: flex;
+
+    @if $x ==1 and $y ==1 {
+        align-items: center;
+        justify-content: center;
+    }
+    @else if $x ==1 and $y ==0 {
+        justify-content: center;
+    }
+    @else if $x ==0 and $y ==1 {
+        align-items: center;
+    }
+}
+@mixin widthHeight ($w, $h: $w) {
+    width: $w;
+    height: $h;
+}

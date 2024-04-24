@@ -1,0 +1,65 @@
+:root {
+    --color-main: #4ECE19;
+    --color-main2: #4ECE19;
+    --color-main3: #FFAE0B;
+    --color-text: #222;
+    --color-border: #c8c8c8;
+    --color-white: #fff;
+
+    --w-container: 1235px;
+    --fs-text: 16px;
+    --fs-text-min: 13px;
+    --fs-title: 30px;
+    --fs-title-sub: 24px;
+    --size-section: 70px;
+    --h-header: 123px;
+}
+
+@media (max-width: 1399px) {
+    :root {
+        --w-container: 1140px;
+
+        --fs-text: 15px;
+        --fs-title: 28px;
+        --fs-title-sub: 23px;
+        --size-section: 60px;
+    }
+}
+
+@media (max-width: 1199px) {
+    :root {
+        --w-container: 960px;
+        --fs-title: 26px;
+        --fs-title-sub: 22px;
+        --size-section: 50px;
+    }
+}
+
+@media (max-width: 991px) {
+    :root {
+        --w-container: 720px;
+
+        --fs-title: 24px;
+        --fs-title-sub: 20px;
+        --size-section: 40px;
+        --h-header: 60px;
+    }
+}
+
+@media (max-width: 767px) {
+    :root {
+        --w-container: 540px;
+
+        --fs-text: 14px;
+        --fs-title: 22px;
+        --fs-title-sub: 18px;
+        --size-section: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    :root {
+        --w-container: 100%;
+        --size-section: 20px;
+    }
+}
