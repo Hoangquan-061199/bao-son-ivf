@@ -15,6 +15,7 @@
   --fs-title-sub: 24px;
   --fs-title-text: 20px;
   --size-section: 70px;
+  --size-section1: 45px;
   --h-header: 123px;
 }
 
@@ -33,6 +34,7 @@
     --fs-title: 26px;
     --fs-title-sub: 22px;
     --size-section: 50px;
+    --size-section1: 35px;
   }
 }
 @media (max-width: 991px) {
@@ -41,6 +43,7 @@
     --fs-title: 24px;
     --fs-title-sub: 20px;
     --size-section: 40px;
+    --size-section1: 30px;
     --h-header: 60px;
   }
 }
@@ -51,6 +54,7 @@
     --fs-title: 22px;
     --fs-title-sub: 18px;
     --size-section: 30px;
+    --size-section1: 20px;
   }
 }
 @media (max-width: 576px) {
@@ -977,6 +981,11 @@ select {
   padding-bottom: var(--size-section);
 }
 
+.py-block1 {
+  padding-top: var(--size-section1);
+  padding-bottom: var(--size-section1);
+}
+
 .pb-block {
   padding-bottom: var(--size-section);
 }
@@ -1570,6 +1579,12 @@ header .bot > .language .lang {
 .slide-index .item {
   display: block;
   aspect-ratio: 1915/731;
+}
+.slide-index.no-index {
+  aspect-ratio: 1915/445;
+}
+.slide-index.no-index .item {
+  aspect-ratio: 1915/445;
 }
 @media (max-width: 767px) {
   .slide-index.owl-dot-border-main .owl-dots {

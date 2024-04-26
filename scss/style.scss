@@ -536,6 +536,13 @@ header {
         aspect-ratio: 1915/731;
     }
 
+    &.no-index {
+        aspect-ratio: 1915/445;
+        .item {
+            aspect-ratio: 1915/445;
+        }
+    }
+
     @include maxWidth(767px) {
         &.owl-dot-border-main .owl-dots {
             bottom: 0;
