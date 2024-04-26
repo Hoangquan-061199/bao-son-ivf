@@ -52,3 +52,69 @@
     width: $w;
     height: $h;
 }
+
+@mixin paddingBotTop($size, $size1: $size) {
+    padding-top: $size;
+    padding-bottom: $size1;
+
+    @include maxWidth(991px) {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    @include maxWidth(767px) {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+@mixin paddingBottom($size) {
+    padding-bottom: $size;
+
+    @include maxWidth(991px) {
+        padding-bottom: 20px;
+    }
+
+    @include maxWidth(767px) {
+        padding-bottom: 15px;
+    }
+}
+
+@mixin marginBottom($size) {
+    margin-bottom: $size;
+
+    @include maxWidth(991px) {
+        margin-bottom: 20px;
+    }
+
+    @include maxWidth(767px) {
+        margin-bottom: 15px;
+    }
+}
+
+@mixin resizeImg($type: "cover") {
+    @if $type == "cover" {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @if $type == "contain" {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+    @if $type == "none" {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    @if $type == "none-x" {
+        max-height: 100%;
+    }
+
+    @if $type == "none-y" {
+        max-width: 100%;
+    }
+}

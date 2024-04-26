@@ -1115,6 +1115,15 @@ select {
                 background-color: var(--color-main3);
             }
         }
+        &.other {
+            span {
+                position: unset;
+                padding-left: 0;
+                &::before {
+                    display: none;
+                }
+            }
+        }
     }
 
     &.uppercase {
@@ -1129,6 +1138,11 @@ select {
         font-size: var(--fs-title);
         font-weight: 600;
         color: var(--color-white);
+    }
+
+    .tilte-item {
+        font-size: var(--fs-title-text);
+        font-weight: 600;
     }
 }
 
