@@ -438,6 +438,12 @@ select {
         pointer-events: all;
         display: flex !important;
     }
+    &.show1 {
+        z-index: 999;
+        opacity: 1;
+        pointer-events: all;
+        display: flex !important;
+    }
 }
 
 .grecaptcha-badge {
@@ -1145,9 +1151,27 @@ select {
         color: var(--color-white);
     }
 
-    .tilte-item {
+    &.main {
+        font-weight: 600;
+        color: var(--color-main);
+    }
+
+    &.title-item {
         font-size: var(--fs-title-text);
         font-weight: 600;
+    }
+
+    &.bf-title {
+        position: relative;
+        padding-bottom: 10px;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            @include widthHeight(72px, 3px);
+            background-color: var(--color-main);
+        }
     }
 }
 

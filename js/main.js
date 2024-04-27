@@ -176,6 +176,37 @@ $(() => {
         }
     });
     // #endregion knowledge index
+
+    // #region team
+    let slideTeam = $('.slide-team .owl-carousel');
+    slideTeam.owlCarousel({
+        items: 4,
+        nav: 1,
+        navText: ['<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/></svg>', '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/></svg>'],
+        dots: 0,
+        autoplay: 1,
+        loop: 1,
+        autoplayTimeout: 5000,
+        smartSpeed: 1000,
+        responsive: {
+            0: {
+                items: 1,
+                margin: 20,
+            },
+            767: {
+                items: 1,
+                margin: 20,
+            },
+            992: {
+                items: 4,
+                margin: 25,
+            },
+        },
+        onInitialized: function () {
+            initialSlideOwl(slideserviceIndexE)
+        }
+    });
+    // #endregion team
 })
 
 function initialSlideOwl(elementSlide, isRemove = true) {
@@ -199,3 +230,18 @@ function initialSlideOwl(elementSlide, isRemove = true) {
     }
     elementSlide.find('.owl-item:not(.active) .item img').attr('loading', 'lazy');
 }
+$(document).ready(function () {
+    $(".about .question .list .item").click(function() {
+        $(this).toggleClass("active");
+        $(this).find(".detail-content").slideToggle();
+    });
+
+    $(".btn-form-calender").click(function() {
+        $(".form-calender").addClass("active");
+        $(".overlay").addClass("show1");
+    })
+    $(".btn-close").click(function() {
+        $(".form-calender").removeClass("active");
+        $(".overlay").removeClass("show1");
+    })
+})
