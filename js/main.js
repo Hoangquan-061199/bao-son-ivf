@@ -181,9 +181,9 @@ $(() => {
     let slideTeam = $('.slide-team .owl-carousel');
     slideTeam.owlCarousel({
         items: 4,
-        nav: 1,
-        navText: ['<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/></svg>', '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/></svg>'],
+        nav: 0,
         dots: 0,
+        margin: 25,
         autoplay: 1,
         loop: 1,
         autoplayTimeout: 5000,
@@ -199,14 +199,55 @@ $(() => {
             },
             992: {
                 items: 4,
-                margin: 25,
             },
         },
         onInitialized: function () {
             initialSlideOwl(slideserviceIndexE)
         }
     });
+   
     // #endregion team
+
+    // #region other service
+    let slideOtherService = $('.slide-other-service .owl-carousel');
+    slideOtherService.owlCarousel({
+        items: 3,
+        nav: 0,
+        dots: 0,
+        margin: 25,
+        autoplay: 1,
+        loop: 1,
+        autoplayTimeout: 5000,
+        smartSpeed: 1000,
+        responsive: {
+            0: {
+                items: 1,
+                margin: 20,
+            },
+            767: {
+                items: 1,
+                margin: 20,
+            },
+            992: {
+                items: 3,
+            },
+        },
+        onInitialized: function () {
+            initialSlideOwl(slideserviceIndexE)
+        }
+    });
+    $('.slide-nav .next').click(function() {
+        slideTeam.trigger('next.owl.carousel');
+        slideOtherService.trigger('next.owl.carousel');
+    })
+    // Go to the previous item
+    $('.slide-nav .prev').click(function() {
+        // With optional speed parameter
+        // Parameters has to be in square bracket '[]'
+        slideTeam.trigger('prev.owl.carousel');
+        slideOtherService.trigger('prev.owl.carousel');
+    })
+    // #endregion other service
 })
 
 function initialSlideOwl(elementSlide, isRemove = true) {

@@ -46,6 +46,10 @@
     font-family: 'default';
 }
 
+body {
+    overflow-x: hidden;
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 8px;
@@ -631,28 +635,48 @@ select {
     right: 15px;
     z-index: 20;
 
-    a,
-    div {
+    .scroll-top {
+        svg {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    a, div {
         @include flexCenter;
         background: var(--color-white);
         margin: 15px 0;
-        width: 50px;
-        height: 50px;
+        width: 56px;
+        height: 56px;
         border-radius: 50%;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         position: relative;
         cursor: pointer;
 
-        i {
-            font-size: 20px;
+        &.phone {
+            background-color: #ff182b;
         }
 
         &.mess {
-            background: var(--bg-mess);
+            background: #1977f3;
+
+            img {
+                margin-left: 2px;
+                margin-top: -1px;
+            }
         }
 
         &.zalo {
-            background: var(--bg-zalo);
+            background: #0090f3;
+
+            img {
+                margin-left: -4px;
+            }
+        }
+
+        img {
+            object-fit: contain;
+            width: initial;
         }
     }
 
@@ -660,8 +684,8 @@ select {
         .coccoc-alo-ph-circle {
             width: 60px;
             height: 60px;
-            top: -25px;
-            left: -10px;
+            top: -22px;
+            left: -7px;
             position: absolute;
             background-color: transparent;
             -webkit-border-radius: 100%;
@@ -697,8 +721,9 @@ select {
             height: 38px;
             top: -15px;
             left: 0px;
+            display: none;
             position: absolute;
-            background-color: red;
+            background-color: #fff;
             -webkit-border-radius: 100%;
             -moz-border-radius: 100%;
             border-radius: 100%;
@@ -715,13 +740,13 @@ select {
         }
 
         .coccoc-alo-ph-img-circle {
-            width: 22px;
-            height: 22px;
+            width: 40px;
+            height: 40px;
             top: -8px;
             left: 8px;
             position: absolute;
             z-index: 10;
-            background: url('../images/ic-phone.webp') no-repeat center center;
+            background: url("/html/assets/images/phone.png") no-repeat center center;
             background-size: 100% 100%;
             -webkit-border-radius: 100%;
             -moz-border-radius: 100%;
@@ -1004,22 +1029,10 @@ select {
         }
 
         .coccoc-alo-ph-img-circle {
-            width: 25px;
-            height: 25px;
-            top: -4px;
-            left: 12px;
-        }
-    }
-
-    @include maxWidth(991px) {
-        a,
-        div {
-            width: 38px;
-            height: 38px;
-
-            img {
-                max-width: 70%;
-            }
+            width: 40px;
+            height: 40px;
+            top: -7px;
+            left: 8px;
         }
     }
 }
@@ -1241,6 +1254,31 @@ select {
 
             svg path {
                 stroke: var(--color-white);
+            }
+        }
+    }
+}
+
+.social-ft {
+    @include flexCenter(0, 1);
+    gap: 10px;
+
+    .item {
+        @include flexCenter;
+        border: 1px solid var(--color-border-social);
+        border-radius: 50%;
+        background-color: var(--color-main);
+        @include widthHeight(40px);
+
+        svg {
+            fill: var(--color-white);
+        }
+
+        &:hover {
+            background-color: unset;
+
+            svg {
+                fill: var(--color-main)
             }
         }
     }
